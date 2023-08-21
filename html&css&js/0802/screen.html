@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크린 객체</title>
+</head>
+<body>
+    <script>
+        // document.write("width : " + screen.width + "<p>");
+        // document.write("height : " + screen.height + "<p>");
+        // document.write("availWidth : " + screen.availWidth + "<p>");
+        // document.write("availHeight : " + screen.availWidth + "<p>");
+        // document.write("colorDepth : " + screen.colorDepth + "<p>");
+        // document.write("pixelDepth : " + screen.pixelDepth + "<p>");
+
+        for(var name in screen){
+            document.write(name + ":" + screen[name] + "<p>");
+        }
+    </script>
+</body>
+</html>

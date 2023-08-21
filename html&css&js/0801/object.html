@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <title>자바스크립트 객체</title>
+</head>
+<body>
+    <!-- <script>
+        var date = new Date();
+        document.write("오늘의 날씨는? : ");
+        document.write(date.getFullYear()+"년");
+        document.write((date.getMonth() + 1) + "월");
+        document.write(date.getDate()+ "일");  
+        document.write(date.getDay()+ "요일");
+        //getDay()메서드 (0-6)사이 숫자로 요일을 반환
+        //0 -> 일요일
+        document.write("<br>");
+        document.write("현재 시간은? : ");
+        document.write(date.getHours()+"시");
+        document.write(date.getMinutes() + "분");
+        document.write(date.getSeconds()+ "초");
+        
+    </script> -->
+    <!-- <script>
+        var str1 = '사람이';
+        var str2 = '아니므니다.';
+        var result = str1 + str2;
+        document.writeln(result);
+
+        var str1 = '은하철도';
+        var str2 = 999;
+        var result = str1 + str2;
+        document.writeln(result);
+
+        document.writeln('<br>');
+        document.writeln('안녕하세요?'=='안녕하세요!');
+        document.writeln('8293'== 8293); //true -> 타입을 고려하지 않고 값만 비교
+        document.writeln('8293'=== 8293); //false -> 타일을 고려해 값을 비교
+        document.writeln('A' < 'B');
+    </script> -->
+    <!-- <script>
+        //검색
+        var str = '하늘과 바람과 별과 시';
+        document.write('결과 = ' + str.charAt(5)+'<br>')
+        document.write('결과 = ' + str.charCodeAt(5)+'<br>')
+
+        //자르기
+        var str = '하늘과 바람과 별과 시';
+        document.write('결과 = ' + str.slice(4, 7)+'<br>')
+        document.write('결과 = ' + str.substring(8, 10)+ '<br>')
+        document.write('결과 = ' + str.substr(4, 6)+ '<br>')
+    </script> -->
+    <!-- <script>
+        //폰트
+        var str = '하늘과 바람과 별과 시';
+
+        document.write('결과 = '+ str.fontcolor('blue') + '<br>');
+        document.write('결과 = '+ str.italics() + '<br>');
+        document.write('결과 = '+ str.fontsize(6) + '<br>');
+        document.write('결과 = '+ str.bold() + '<br>');
+    </script> -->
+    <!-- <script>
+        Array
+        var month = new Array();
+        var month = new Array(12);
+        month[0] = 1;
+        month[1] = 2;
+        month[2] = 3;
+        month[3] = 4;
+
+        var month = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+
+        for(var i = 0; i< month.length; i++){
+            document.write('결과 = ' + month[i] + '<br>')
+        }
+    </script> -->
+    <!-- <script>
+        var major = new Array("컴퓨터공학","전자공학","인공지능");
+        var minor = new Array("국문학","경영학","영문학");
+        document.write('전공/부전공 : ' +major.concat(minor) + '<br>')
+    </script> -->
+
+    <!-- <script>
+        var month = new Array(12, 4,3,5,6,8,7,11,2,1,55);
+
+        for(var i = 0; i< month.length; i++){
+            document.write('결과 = ' + month[i] + '<br>')
+        }
+        document.write('<p>')
+        var rmonth = month.sort(function(left, right){
+            return left-right;
+        });
+
+        for(var i = 0; i< rmonth.length; i++){
+            document.write('결과 = ' + month[i] + '<br>')
+        }
+    </script> -->
+    <!-- <script>
+
+        //Function 객체
+        var plus = new Function('x, y','return(x + y)');
+        document.write('결과 = ' + plus(7,3) +'<br>');
+
+    </script> -->
+    <!-- <script>
+        //Number 객체
+        var str1 = "8293";
+        var str2 = "abc";
+        var objNum = new Number("1234");
+        //Number 객체에 문자열을 넣으면 숫자형으로 형변환을 시켜줌
+        var num = 1234;
+
+        document.write('문자열 + 숫자형 : ' + (str1 + num) + '<br>');
+        // 숫자를 문자로 자동으로 형변환
+        document.write('objNum + 숫자형 : ' + (objNum + num) + '<br>');
+        //"1234"라는 문자열을 1234라는 숫자형으로 형변환이 되었음
+        document.write('Number(str1) : ' + Number(str1) + '<br>');
+        document.write('Number(str2) : ' + Number(str2) + '<br>');
+
+        document.write('Number.MAX_VALUE : ' + Number.MAX_VALUE + '<br>');
+        document.write('Number.MIN_VALUE : ' + Number.MIN_VALUE + '<br>');
+    </script> -->
+    <script>
+        window.alert("메시지를 출력합니다.");
+    </script>
+</body>
+</html>

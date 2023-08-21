@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <!-- <script>
+        var i = 0;
+        while(i < 5){
+            document.write('Javascript' + '<br>');
+            i++;
+        }
+    </script> -->
+    <!-- while문을 do while 문으로 변경 -->
+    <!-- <script>
+        var i = 0;
+        do{
+            document.write('Javascript' + '<br>');
+            i++;
+        }while(i<5);
+    </script> -->
+    <!-- for문으로 변경 -->
+    <!-- <script>
+        for(var i=0; i<5; i++){
+            document.write('Javascript' + '<br>');
+        }
+    </script> -->
+    <h1>Array</h1>
+    <script>
+        var arr = ["자바스크립트","c언어","파이썬"]; 
+        document.write(arr[0] + '<br>');
+        document.write(arr[1] + '<br>');
+        document.write(arr[2] + '<br>');
+        document.write(arr.length + '<br>');
+    </script>
+    <h1>Add</h1>
+    <script>
+        arr.push('C#.NET');
+        arr.push('MySQL');
+        document.write(arr.length + '<br>');
+        document.write(arr[3] + '<br>');
+        document.write(arr[4] + '<br>');
+    </script>
+    <h1>전체 출력</h1>
+    <script>
+        for(var i = 0; i< arr.length; i++){
+            document.write('<li>' + arr[i] + '</li>');
+        }
+        // li 태그 전체를 가져올때 : document.querySelectorAll
+        var list = document.querySelectorAll('li');
+        for(var i = 0; i< arr.length; i++){
+            console.log(list[i]);
+            // console.log() 명령프롬프트를 입력받을 수 있는 기능
+        }
+    </script>
+</body>
+</html>

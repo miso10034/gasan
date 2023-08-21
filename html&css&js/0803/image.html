@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 객체</title>
+</head>
+<body>
+    <h1><center>베스트 셀러</center></h1><hr>
+
+    <img src = "MFC.jpg">
+    <img src = "API.jpg">
+    <img src = "C++.jpg"><hr>    
+
+    <script>
+        document.write(document.images.length + "<br>");
+
+        for(var i=0; i<document.images.length; i++){
+            document.images[i].width = "210";
+            document.images[i].height = "300";
+            document.images[i].border = "5";
+        }
+
+        for(var i = 0; i<document.images.length; i++){
+            document.write(document.images[i].width + "<br>");
+            document.write(document.images[i].height + "<br>");
+    
+        }
+        
+            </script>
+</body>
+</html>

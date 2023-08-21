@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크 객체</title>
+</head>
+<body>
+    <a href = "https://mainbooth.co.kr/" target="_blank">메인부스</a><br>
+    <a href = "https://doubleloversroom.com/" target="_blank">더블러버스</a><br>
+    <a href = "https://feizhuliu.kr/" target="_blank">비주류</a><br>
+    <hr>
+    <script>
+        for(var i=0; i<document.links.length; i++)
+        {
+            document.write(document.links[i].href + "<br>");
+           
+            document.write(document.links[i].pathname + "<br>");
+            
+            document.write(document.links[i].target + "<br>");
+        }
+        
+    </script>
+</body>
+</html>

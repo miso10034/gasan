@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도규먼트 객체</title>
+</head>
+<body>
+    <script>
+        function newOpen(){
+            var newWin = window.open('','','width = 350, height = 600');
+            newWin.document.open();
+            newWin.document.write("<h1><center>베스트 셀러</center></h1>");
+            newWin.document.write("<img src = HTML&CSS\Javascript\k_0802\images.jfif'>");
+            newWin.document.close();
+        }
+        function newClear(){
+            newWin.document.open();
+            newWin.document.clear();
+            newWin.document.close();
+        }
+
+    </script>
+    <h1>새 문서 직접 만들기</h1>
+    <button onclick="newOpen()">새문서 열기</button>
+    <button onclick="newClear()">문서 지우기</button>
+</body>
+</html>

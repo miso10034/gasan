@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // var a = 5;
+        // var b = 3;
+
+        // if(a > 0){
+        //     documnet.write('a는 0보다 크다' + '<br>');
+        // }else{
+        //     document.write('a는 0보다 작거나 같다' + '<br>');
+        // }
+
+        // if(b > a){
+        //     document.write('b는 a보다 크다' + '<br>');
+        // }else{
+        //     document.write('b는 a보다 작거나 같다'+'<br>');
+        // }
+
+        // var val = 90;
+       
+
+        // if(val >= 90 && val <=100){
+        //     document.write('A 등급' + '<br>');
+        // }else if(val >= 80 && val <=90 ){
+        //     document.write('B 등급' + '<br>');
+        // }else if(val >= 70 && val <= 80){
+        //     document.write('C 등급' + '<br>');
+        // }else{
+        //     document.write('F 등급' + '<br>');
+        // }
+
+        //document.querySelector(id);
+        //document.querySelector(.class);
+        // -> 선택자와 일치하는 문서 내 첫 번째 element를 반환한다. 
+        // 일치하는 요소가 없으면 null을 반환 
+    // </script>
+    // <!-- 자바스크립트는 "", '' 같음 -->
+    // <!-- c언어는 "" -> 문자열, '' -> 문자 -->
+    // <h1>배경색이 변경됩니다.</h1>
+    // <!-- onclick :  이벤트 핸들러 -->
+
+    // <!-- 토글버튼 -->
+
+    // <input type="button" value="버튼이다 임마" id="bgc" onclick="
+    //     if(document.querySelector('#bgc').value='blue'){
+    //         document.querySelector('body').style.backgroundColor = 'blue';
+    //         document.querySelector('body').style.color = 'white';
+    //         document.querySelector('#bgc').value = 'blue';
+    //     }else{
+    //         document.querySelector('body').style.backgroundColor = 'red';
+    //         document.querySelector('body').style.color = 'white';
+    //         document.querySelector('#bgc').value = 'red';     }"> </input><script>
+    //     var shortcut = 1;
+
+    //     switch(shortcut){
+    //         case 1 : 
+    //             document.write("엄마 : 010-xxxxxx");
+    //             break;
+    //         case 2 : 
+    //             document.write("아빠 : 010-xxxxxx");
+    //             break;
+    //         case 3 : 
+    //             document.write("언니 : 010-xxxxxx");
+    //             break;
+    //         case 4 : 
+    //             document.write("해당 단축키가 없습니다.");
+    //             break;
+    //     }
+    // </script>
+    // 계절을 출력하는 예제
+    <script>
+        var month = 1;
+
+        switch(month){
+            case 3:
+            case 4:
+            case 5:
+                document.write("봄");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                document.write("여름");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                document.write("가을");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                document.write("겨울");
+                break;
+            default:
+                document.write("해당하는 월이 없습니다.");
+        }
+    </script>
+</body>
+</html>

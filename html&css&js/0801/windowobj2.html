@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+</head>
+<body>
+    <script>
+        var timeId;
+        var count = 0;
+
+        function timeStart(){
+            timeId = window.setInterval(function(){
+                document.getElementById("result").innerHTML = count++;
+            }, 1000)
+        }
+        function timeStop(){
+        window.clearInterval(timeId);
+        }
+    </script>
+
+    <button onclick="timeStart()">카운트 시작</button>
+    <button onclick="timeStop()">카운트 중지</button><p></p>
+    <div id = "result"></div>   
+</body>
+</html>

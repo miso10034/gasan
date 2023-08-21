@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 객체</title>
+</head>
+<body onload="init()">
+    <form name="test" method="get" action="" onsubmit="register()" onreset="rewrite()" >
+        아이디 : <input type="text" name="id" placeholder="아이디를 입력하시오" value="" onchange=""><br>
+        비밀번호 : <input type="password" name="pw" placeholder="비밀번호를 입력하시오"  value="">(8자 이상 12자 이하)<p>
+        하고 싶은말 : <p><textarea name="memo" id="" cols="50" rows="7"></textarea><p>
+        
+        연령대<p>
+        <input type="radio" name = "age" value="10">10대
+        <input type="radio" name = "age" value="20">20대
+        <input type="radio" name = "age" value="30">30대
+        <input type="radio" name = "age" value="40">40대
+
+        <p><hr>
+
+        개인정보동의</p>
+        <input type = "checkbox" name = "chkall" value="1" onclick="checkAll()">개인정보전체선택<p></p>
+        <input type = "checkbox" name = "chk1" value="1">개인정보수집<p>
+        <input type = "checkbox" name = "chk2" value="1">개인정보조회<p>
+        <input type = "checkbox" name = "chk3" value="1">개인정보제공<p>    
+    
+    
+        
+        <input type="submit" name="btn1" value="등록하기">
+        <input type="reset" name="btn2" value="다시작성" >
+        <input type="button" name="btn3" value="전체선택" onclick="selectedAll()" >
+        <input type="button" name="btn4" value="이름바꾸기" onclick="changeName()">
+    </form>
+
+    <script>
+        function chekedAll(){
+            for(var i = 4; i<7; i++){
+                document.test.elements[i].click();
+            }
+            S
+        }
+        var bToggle = true;
+        function changeName(){
+            if(bToggle){
+                document.test.btn1.value = "안등록하기";
+                bToggle = false; //!bToggle == falseS
+            }else{
+                document.test.btn1.value = "등록하기";
+                bToggle = true;
+            }
+        
+        }
+        function selectedAll(){
+            document.test.memo.select();
+        }
+        // input 내용이 변경됐을 때
+        function change(){
+            alert("아이디가 변경되었습니다.")
+        }
+        // 새로고침 되자마자 시행되는 함수
+        function init(){
+            document.test.id.focus()
+        }
+        function register()
+        {   
+            var len = document.test.age.length;
+            for(var i = 0; i<document.test.age.length; i++){
+                if(document.test.age[i].checked==true){
+                    alert(document.test.age[i].value + '대 이군요-!')
+                }
+            }  
+
+            var chekced1 = document.test.chk1.checked;
+            var chekced2 = document.test.chk2.checked;
+            var chekced3= document.test.chk3.checked;
+
+            if(document.test.id.value ==""){
+               // alert("아이디를 입력하세요")
+            } else if(document.test.pw.value==""){
+                alert("비밀번호를 입력하세요")
+            } else{
+                var len = document.test.pw.value.length
+                if(len<8 || len>12){
+                    alert("비밀번호는 8자 이상 12자 이하로 입력하세요")
+                } else{
+                    if(cheked1&&cheked2&&checked3){
+                        document.test.submit();
+                        alert("회원가입을 축하합니다.");
+                    }else{
+                        alert("모든 항목을 체크해주세요");
+                    }
+                }
+            }
+        }
+        function rewrite()
+        {
+            document.test.reset();
+        }
+        // document.write(document.test.length+"</br>")
+        // document.write(document.test.method+"</br>")
+        // document.write("<p>")
+
+        // for(var i=0;i<document.test.length;i++){
+        //     document.write(document.test.elements[i].type+"</br>")
+        //     document.write(document.test.elements[i].value+"</br>")
+        // }
+        // document.write("<p>")
+        // for(var i=0;i<document.test.length;i++){
+        //     document.write(document.test.elements[i].name+"</br>")
+        // }
+    </script>
+</body>
+</html>

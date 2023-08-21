@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 객체</title>
+</head>
+<body>
+    <form name = "test" method="get" action="" onsubmit="register" onreset="rewrite">
+        아이디 : <input type = "text" name = "아이디" size="20" value=""></input><br>
+        패스워드 : <input type = "password" name = "비밀번호" size="20" value=""></input><p>
+        <input type = "submit" name = "등록하기"  onclick="register()"></input>
+        <input type = "reset" name = "다시작성" value = "다시작성" onclick="rewrite()"></input><br>
+    </form>
+    <!-- form 태그에 onsubmit="register" onreset="rewrite">를 사용하면
+         value = "등록하기" value = "다시작성"를 input 태그에서 빼줘야함 -->
+    <script>
+        function register(){
+            document.test.submit();
+            alert("가족이된 걸 축하해~!");
+        }
+        function rewrite(){
+            document.test.reset();
+            // alert("다시 입력하세요");
+        }
+
+
+
+        // document.write(document.test.length + "<br>");
+        // document.write(document.test.method + "<br>");
+        // document.write('<p>');
+        // for(var i=0; i<document.test.length; i++){
+        //     document.write(document.test.elements[i].type + "<br>"); 
+        //     document.write(document.test.elements[i].value + "<br>");   
+        // }SS
+        // document.write('<p>');
+        // for(var i=0; i<document.test.length; i++){
+        //     document.write(document.test.elements[i].name + "<br>");    
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+</head>
+<body>
+    <script>
+        // document.write("appCodeName : " + navigator.appCodeName + "<p>");
+        // document.write("appName : " + navigator.appName + "<p>");
+        // document.write("appVersion : " + navigator.appVersion + "<p>");
+        // document.write("platform : " + navigator.platform + "<p>");
+        // document.write("userAgent : " + navigator.userAgent + "<p>");
+
+        // for(var name in navigator){
+        //     document.write(name + ":"  + navigator[name] + "<p>");}
+                        // 키 : 값 형태
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf("chrome") != -1){
+            //agent.indexOf에 크롬이라는 문자열이 존재하냐(-1 : 존재하지 않다)
+            document.write("<h1>" + "크롬 브라우저를 지원합니다." + "</h1>");
+        }else{
+            document.write("<h1>" + "크롬 브라우저를 지원하지않습니다." + "</h1>");
+        }
+        
+     </script>
+</body>
+</html>

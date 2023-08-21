@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼</title>
+</head>
+<body>
+    <form name="test">
+        <h3>메모리의 주소값을 지정하는 변수를 무엇이라 하는 가?</h3><p></p>
+
+        <input type = "radio" name = "exam" value = "1" onclick="result()">1. 약수터</p>
+        <input type = "radio" name = "exam" value = "2" onclick="result()">2. 화개장터</p>
+        <input type = "radio" name = "exam" value = "3" onclick="result()">3. 포인터</p>
+        <input type = "radio" name = "exam" value = "4" onclick="result()">4. 메롱</p>
+        
+    </form>
+    <script>
+        function result(){
+                if(document.test.exam[1].checked == true){
+                    alert("정답이다.");
+                }else{
+                    alert("오답입니다.");
+                }
+            }
+    </script>
+</body>
+</html>

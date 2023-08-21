@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        function myInfo(name, age){
+            document.write("이름 : " + name +'<br>');
+            document.write("나이 : " + age +'<br>');
+        }
+
+        function plus(val1, val2){
+            // document.write("두 수의 합 : " + (val1+val2) + '<br>');
+            return (val1 + val2);
+        }
+
+        var myName = '김미소';
+        var myAge = 26;
+
+        // myInfo(myName, myAge);
+        var result = plus(20,10);
+        document.write("두 수의 합 : " + result + '<br>');
+        document.write('<div style = "color:red">' + result + '</div>');
+        document.write('<div style = "color:blue">' + result + '</div>');
+
+    </script>
+</body>
+</html>

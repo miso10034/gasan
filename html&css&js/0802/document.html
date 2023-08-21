@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도규먼트 객체</title>
+</head>
+<body>
+    <script>
+        function backColor(){
+            var colval = document.getElementById("colorVal");
+            document.bgColor = colval.value;
+        }
+        function textColor(){
+            var colval = document.getElementById("colorVal");
+            document.fgColor = colval.value;
+        }
+        function changeTitle(){
+            var docval = document.getElementById("titleVal");
+            document.title = docval.value;
+        }
+        function printInfo(){
+            var docinfo = "최근 바뀐 날짜 : " + document.lastModified + "\n\n"
+                        + "현재 url : " + document.URL + "\n\n"
+                        + "문서 제목 : " + document.title + "\n\n" ;
+            alert(docinfo);
+        }
+    </script>
+    <h1>배경색과 글자색을 변경합니다.</h1>
+    색상 입력 : 
+    <input type = "text" id = "colorVal" value = ""><p></p>
+    <button onclick="backColor">배경색 변경하기</button>
+    <button onclick="textColor">글자색 변경하기</button><p></p>
+
+    타이틀 입력 : 
+    <input type = "text" id = "titleVal" value = "새문서"><p></p>
+    <button onclick="changeTitle()">타이틀 변경하기</button>
+    <button onclick="printInfo()">문서정보 출력하기</button><p></p>
+</body>
+</html>
