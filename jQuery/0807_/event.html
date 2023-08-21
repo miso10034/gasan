@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+    <script>
+        function clickHandler(e){
+            alert('1시간도 안남았다 점심시간~!');
+        }
+        $(document).ready(function(){
+            console.log(1);
+            $('#click-me').bind('click', clickHandler);
+            $('#remove-event').bind('click',function(){
+                $('#click-me').unbind('click',clickHandler);
+            });
+            $('#trigger-event').bind('click',function(){
+                $('#click-me').trigger('click');
+            });
+        })
+    </script>
+<body>
+    <input type = "button" id = "click-me" value = "클릭버튼">
+    <input type = "button" id = "remove-event" value = "언바인드">
+    <input type = "button" id = "trigger-event" value = "트리거">
+</body>
+</html>

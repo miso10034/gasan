@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquert_1</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 다음의 UI에서 메뉴 표시 버튼을 클릭하면 토글 형태로
+        메뉴항목 1,2,3이 보였다가 안보이도록 제이쿼리를 이용하여 작성하시오.
+        토글 기능은 toggle() 메소드 이용하면 됨. -->
+    <script>
+        $('menuButton').click(function(){
+            $('dropdownMenu').toggle();
+        });
+    </script>
+    <button id="menuButton">메뉴 표시</button>
+        <ul id="dropdownMenu">
+            <li><a href="#">메뉴 항목 1</a></li>
+            <li><a href="#">메뉴 항목 2</a></li>
+            <li><a href="#">메뉴 항목 3</a></li>    
+        </ul>
+    <!-- 다음과 같은 UI 상태에서 애니메이션 시작 버튼을 클릭할 때마다 
+        animatedDiv 영역의 height 속성이 150px씩 늘어나도록 제이쿼리를 이용하여
+        코드를 작성하시오. (단, 애니메이션의 동작 시간은 1초로 한다.) -->
+    <div id="animateDiv">애니메이션</div>
+    <button id="animateButton">애니메이션 시작</button>
+    <script>
+        $('animateButton').click(function(){
+            $('animateDiv').animate({
+                height:'+=150px'
+            },1000)
+        })
+    </script>
+    <!-- 스타크래프트의 테란 유닛인 레이스의 클로킹 기술을 만들어보자.
+        화면에 레이스(비행기)를 출력하고, 클로킹 버튼을 그 옆에 배치한다.
+        클로킹 버튼을 클릭하면 레이스가 사라지게 코드를 작성해보자.
+        코드는 제이쿼리를 이용한다.  -->
+        
+    <!-- alt : 이미지를 보여줄 수 없을 때 해당 이미지 대체할 텍스트를 명시 -->
+    <img id = "wraith" src = "wraith.png" alt = "레이스"/>
+    <img id = "cloaking" src = "cloaking.png" alt = "클로킹 버튼"/>
+    <script>
+        $(document).ready(function(){
+            $('#cloaking').click(function(){
+                $('#wraith').toggle().fadeOut(2000);
+            })
+        })
+    </script>
+</body>
+</html>

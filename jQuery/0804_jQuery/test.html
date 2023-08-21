@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 테스트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        //ready() -> onload와 비슷한 함수
+        //ready라는 이벤트가 발생하면 function을 수행해라
+        // jQuery(document).ready(function(){
+        //     //# -> id 선택자로 불러옴
+        //     jQuery("#msgid").html("This is Hello World by JQuery")
+        //     .css("background-color","green");
+        // })
+
+        //jQuery 대신에 $(wrapper)을 사용할 수 있음
+        $(document).ready(function(){
+            //# -> id 선택자로 불러옴
+            $("#msgid").html("This is Hello World by JQuery")
+            .css("background-color","green");
+        })
+    </script>
+    <!-- HTML로 밑에 문장을 수행 -->
+    This is Hello World by HTML
+    <div id = "msgid"></div>
+</body>
+</html>

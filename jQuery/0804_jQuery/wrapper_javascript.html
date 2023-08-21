@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wrapper</title>
+</head>
+<body>
+    <script>
+        //페이지가 처음 로딩됐을 때
+        window.onload = function(){
+            console.log('html이 준비되면 실행');
+            document.getElementById('pp').style.color = "pink";
+        }
+        // color 매개변수
+        function fn_click(color){
+            document.getElementById('pp').style.color = color;
+        }
+    </script>
+    <!-- 자바스크립트 기반 -->
+    <p id = "pp">Hello World : javascript</p>
+    <!-- red = 실매개변수 -->
+    <button id = "red" onclick="javascript:fn_click('red')">red</button>
+    <button id = "blue" onclick="javascript:fn_click('blue')">blue</button>
+</body>
+</html>

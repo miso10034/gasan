@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엘리먼트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        div{
+            border: 2px blue;
+            margin : 2px;
+            padding : 2px;
+        }
+        p{
+            background : yellow;
+        }
+        strong{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <span>Span Text</span>
+    <strong>What about me?</strong>
+    <span>Another One</span>
+    <script>
+        //wrap() 부모태그로 올라가는 것
+       $('span').wrap("<div><div><p><b></b></p></div></div>")
+    </script>
+</body>
+</html>

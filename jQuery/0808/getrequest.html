@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET요청</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+    //이미지 파일을 get방식으로 가져오기 -> 콘솔로그에서만 작동하고 화면에서는 보여지지 않음    
+      $.ajax({
+        url :"https://jamsuham75.github.io/image/wraith.png",
+        method : "GET",
+        success : function(response){
+            console.log("성공",response);
+        },
+        error : function(error){
+            console.log("에러",error);
+        }
+    });  
+
+    //json 파싱
+    // $.ajax({
+    //     url :"https://raw.githubusercontent.com/jamsuham75/image/main/test.json",
+    //     method : "GET",
+    //     success : function(response){
+    //         console.log("성공",response);
+    //     },
+    //     error : function(error){
+    //         console.log("에러",error);
+    //     }
+    // });  
+    </script>
+</body>
+</html>

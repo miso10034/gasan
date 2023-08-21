@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <button id = 'menuButton'>메뉴 표시</button>
+    <ul id = "dropdownMenu">
+      <li><a href ="#">메뉴 항목1</a></li>
+      <li><a href ="#">메뉴 항목2</a></li>
+      <li><a href ="#">메뉴 항목3</a></li>
+    </ul>
+    <script>
+      $(document).ready(function(){
+          $("#menuButton").click(function(){
+            $("#dropdownMenu").toggle();//버튼 한번 클릭시 보이고 한번 더 클릭시 안보이고
+          })
+      })
+    </script>
+</body>
+</html>

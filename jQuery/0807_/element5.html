@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엘리먼트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        p{
+          color : blue;
+          margin : 8px;  
+        }
+    </style>
+</head>
+<body>
+    <input type = "text" value = 'some text'/>
+    <p></p>
+    
+    <script>
+      $('input').keyup(function(){
+        var value = $(this).val();
+        $('p').text(value);
+      });
+
+    </script>
+</body>
+</html>

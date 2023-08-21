@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타그래프트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 스타크래프트의 테란 유닛인 레이스의 클로킹 기술을 만들어보자.
+        화면에 레이스(비행기)를 출력하고, 클로킹 버튼을 그 옆에 배치한다.
+        클로킹 버튼을 클릭하면 레이스가 사라지게 코드를 작성해보자.
+        코드는 제이쿼리를 이용한다.  -->
+        
+    <!-- alt : 이미지를 보여줄 수 없을 때 해당 이미지 대체할 텍스트를 명시 -->
+    <img id = "wraith" src = "wraith.png" alt = "레이스"/>
+    <img id = "cloaking" src = "cloaking.png" alt = "클로킹 버튼"/>
+    <script>
+        $(document).ready(function(){
+            $('#cloaking').click(function(){
+                $('#wraith').toggle().fadeOut(2000);
+            })
+        })
+    </script>
+</body>
+</html>

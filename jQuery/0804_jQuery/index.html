@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 연습</title>
+</head>
+<body>
+    <h1>API 연습</h1>
+    <input type="text" id="search"></input>
+    <button id = "submit">검색</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script>//ajax -> 오브젝트 형태 -> json형태 -> {}안에 넣기
+        $('#submit').click(function(){
+            $.ajax({
+                method : "GET",
+                url : "https://dapi.kakao.com/v3/search/book?target=title&query=" + $('#search').val(),
+                headers:{Authorization : "KakaoAK 8a8972422843ae943f3fe179e7f18332"}
+            })
+            .done(function(data){
+                $('body').append("<span>" + data.documents[0].title + "</span>")
+                $('body').append("<img src = "+ data.documents[0].thumbnail + "</>")
+            })// done : 응답받는 쪽
+        })
+
+        
+    </script>
+</body>
+</html>

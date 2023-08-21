@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+    </ul>
+    <ul class = "objlang">
+        <li>javascript</li>
+    </ul>
+    <script>
+        (function($){
+            //클릭발생시 ul class를 수행해 값을 위에서 가져옴
+            $('ul.objlang').click(function(){
+                $('li').css('background-color','yellow');
+            })   
+        })(jQuery) //jQuery가 $로 넘어감
+    </script>
+</body>
+</html>

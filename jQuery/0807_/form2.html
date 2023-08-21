@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+       p{
+      margin : 0;
+      color : blue;
+    }
+    div, p {
+      margin-left : 1opx;
+    }
+    span{
+      color : red;
+    }
+    </style>
+</head>
+<body>
+    <p>
+      Type 'correct' to validate;
+    </p>
+   <form action = 'javascript:alert("success")'>
+      <div>
+        <input type = "text">
+        <input type = "submit" value = "질의보내기">
+      </div>
+   </form>
+   <span></span>
+    <script>
+        $('form').submit(function(){
+            if($('input:first').val() == 'correct'){
+              $('span').text("validated...").show();
+              return true;
+            }
+            $('span').text("Not valid").show().fadeOut(2000);
+            return false;
+        })
+    </script>
+</body>
+</html>
