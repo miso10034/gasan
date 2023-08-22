@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글맵</title>
+    <!-- 사전에 작성되어야 할 항목 -->
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"></script>
+</head>
+<body>
+    <script>
+        var markerIcon = new google.maps.MarkerImage("marker.png");
+
+        function MyPosition(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(성공시콜백);
+            }
+        }
+        function 성공시콜백(position){
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            document.getElementById("result").innerHTML = "위도 : " + lat +
+            "경도 : " + lng;
+            // 추가된 부분
+            // 구글맵이 출력되도록
+            // latlng : 위도 경도가 한꺼번에 출력되는 메서드
+            var latlng = new google.maps.LatLng(lat, lng);
+
+            var options = {
+                zoom : 15,
+                center : latlng, //위치를 중앙으로
+                mapTypeId : google.maps.MapTypeId.ROADMAP
+            };
+            //어디에 출력할 것인지
+            var map = new google.maps.Map(document.getElementById("map"), options)
+
+            var marker = new google.maps.Marker({
+                map : map,
+                icon : markerIcon,
+                title : "현재 나의 위치",
+                position : latlng //현재 위도경위의 위치정보를 가지고 있는 변수
+            });
+        }
+        function 오류시콜백(error){
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    document.getElementById("result").innerHTML = " 현재 위치 정보에 대한 권한이 없습니다.";
+                    break;
+                case error.POSITION_UNAVAILABEL:
+                    document.getElementById("result").innerHTML = " 현재 위치 정보를 구할 수 없습니다.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("result").innerHTML = " 시간 제한을 초과했습니다.";
+                    break;
+            }
+        }
+    </script>
+    <button onclick = "MyPosition()">나의 현재 위치 정보</button>
+    <div id = "result"></div>
+    <div id = "map" style="width:100%; height:500px"></div>
+</body>
+</html>
