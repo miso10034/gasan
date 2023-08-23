@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 날씨 정보</title>
+    
+</head>
+<body>
+    <h1>현재 날씨 정보</h1>
+    <p id = "weather"></p>
+
+    <script>
+        function MyPosition(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(성공시콜백);
+            }
+        }
+        function 성공시콜백(position){
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            document.getElementById("weather").innerHTML = "위도 : " + lat +
+            "경도 : " + lng;
+
+            //호출
+            getWeather(lat, lng); 
+
+        }
+        function getWeather(lat, lng){
+            var apikey = "286ccc5dd20bac13c9ef9bb419ea17e8";
+            var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apikey}`;
+        
+            //서버에 요청하기
+            fetch(apiUrl)
+            // 성공시
+            //서버에 요청한 응답 받기 response : 서버로 부터 응답받은 메시지
+            .then(function(response){
+                console.log(response);
+                //받은 응답 메시지를 json형태로 변환
+                return response.json();
+            })//data로 다시 받아서(콜백함수)
+            .then(function(data){
+                console.log(data);
+                var weatherDescription = data.weather[0].description;
+                var temperature = data.main.temp;
+                var cityName = data.name;
+
+                var weatherInfo = `도시 : ${cityName}<br> 
+                날씨 : ${weatherDescription}<br>
+                온도 : ${temperature}<br>
+                `
+                document.getElementById("weather").innerHTML = weatherInfo;
+            })
+            // 실패시 
+            .catch(function(error){
+                console.error('날씨 정보를 가져오는 중 오류 발생 : ', error);
+                document.getElementById("weather").innerHTML = "날씨 정보 못가져옴";
+            })
+
+        }
+
+        MyPosition();
+    </script>
+    
+
+</body>
