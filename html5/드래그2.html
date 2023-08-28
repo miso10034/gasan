@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드래그</title>
+    <style>
+        #box1,#box2,#box3{
+            width : 75px;
+            height:70px;
+            padding: 5px;
+            margin: 5px;
+        } 
+        #box1{background-color: darkblue;}
+        #box2{background-color: royalblue;}
+        #box3{background-color: powderblue;}
+
+        #target
+        {
+            width : 500px;
+            height : 200px;
+            padding : 5px;
+            margin : 5px;
+            border : 3px solid thistle;
+            background-color :plum ;
+        }
+    </style>
+</head>
+<body>
+    <h2>draggable 속성 설정 테스트</h2>
+
+    <div id = "box" ondrop = "drop(event)" ondragover="dragover(event)">
+        <div id = "box1" draggable="true" 
+        ondragstart = "dragstart(event)"></div>
+
+        <div id = "box2" draggable="false"></div>
+        <div id = "box3" draggable="false"></div>
+    </div>
+
+    <div id = "target" ondragover = "dragover(event)" ondrop="drop(event)" ></div>
+
+    <div id = "result"></div>
+
+    <script>
+       function dragstart(e){
+        e.dataTransfer.setData("colorbox", e.target.id);
+       }
+       
+        function dragover(e){
+            document.getElementById("result").innerHTML = "target 영역위에 진입하였습니다.";
+            e.preventDefault();
+        }
+        function drop(e){
+            var bid = e.dataTransfer.getData("colorbox");
+            var id = e.target.getAttribute("id");
+
+            e.target.appendChild(document.getElementById(bid));
+            if(id == 'target'){
+                alert('target에 드롭되었습니다.');
+            }else{
+                alert('원래 영역에 드롭되었습니다.');
+            }
+        }
+    </script>
+</body>
+</html>

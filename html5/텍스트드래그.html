@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 드래그 앤 드롭</title>
+    <style>
+        .draggable{
+            display : inline-block;
+            padding : 5px 10px;
+            background-color: palevioletred;
+            color : white;
+            user-select : none;
+            cursor : pointer;
+        }
+
+        .droppable{
+            width : 200px;
+            height : 100px;
+            border : 2px dashed purple;
+            margin-top : 20px;
+            padding : 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class = "draggable" draggable="true">드래그할 텍스트</div>
+    <div class = "droppable" ondrop="dropHandler(event)"
+                             ondragover="dragOverHandler(event)"></div>
+
+<script>
+    const draggable = document.querySelector('.draggable');
+    draggable.addEventListener('dragstart', dragStartHandler);
+
+    function dragStartHandler(e){
+        e.dataTransfer.setData('text/plain', e.target.textContent);
+    }
+
+    function dropHandler(e){
+        e.preventDefault();
+        const dropText = e.dataTransfer.getData('text/plain');
+        e.target.textContent = dropText;
+    }
+
+    function dragOverHandler(e){
+        e.preventDefault();
+    }
+</script>
+                        
+</body>
+</html>
