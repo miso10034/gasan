@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬스토리지</title>
+</head>
+<body>
+    키 : <input type="text" id="key"><br> 값 : <input type="text" id="data">
+    <br><br>
+    <button onclick="saveData()">데이터 저장</button>
+    <button onclick="loadData()">데이터 읽기</button>
+    <button onclick="removeData()">항목 삭제</button>
+    <button onclick="removeAll()">전체 삭제</button><br><br>
+    <div id="result"></div>
+
+    <script>
+        var key = document.getElementById("key");
+        var data = document.getElementById("data");
+
+        function saveData(){
+            // localStorage.setItem(key.value, data.value);
+            localStorage[key.value] = data.value;
+            document.getElementById("result").innerHTML = "데이터 저장 완";             
+        }
+        function removeData(){
+            document.getElementById("result").innerHTML = key.value + "데이터 삭제";
+            localStorage.removeItem(key.value);
+        }
+        function removeAll(){
+            document.getElementById("result").innerHTML = key.value + "전체 데이터 삭제"
+            localStorage.clear();
+        }
+        function removeData(){
+            document.getElementById("result").innerHTML = key.value + "데이터 삭제";
+            localStorage.removeItem(key.value);
+        }
+        function removeAll(){
+            document.getElementById("result").innerHTML = key.value + "전체 데이터 삭제"
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>
