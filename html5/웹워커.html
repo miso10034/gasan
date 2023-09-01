@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 워커</title>
+    <style></style>
+</head>
+<body>
+    
+    <script>
+        var worker;
+
+        function Available(){
+            if(window.Worker){
+                document.getElementById("result").innerHTML = "웹 워커 지원합니다.";
+            }
+            else{
+                document.getElementById("result").innerHTML = "웹 워커 지원 안 합니다.";
+            }
+        }
+
+        function stopOperation(){
+            var endTime = new Date().getTime() + 5000; //현재 시간 + 5초
+            while(new Date().getTime() < endTime){;} //특정 수행 없이 루프 돎 - 자원 독점하게 됨 -> 스레드로 변경하면 더 효율적
+            document.getElementById("result").innerHTML = "일어날 시간입니다!"; // 큐에 메시지가 있고 병목 현상이 없어지면 수행
+        }
+
+        function awake(){  
+            alert("일어납시다.");
+        }
+
+        function applyWorker(){
+            if(window.Worker){
+                worker = new Worker("worker.js");
+                worker.postMessage("갑자기 내일 페스티벌 감! 대박");
+                worker.onmessage = function(event){
+                    console.log(event);
+                    document.getElementById("result").innerHTML = event.data;
+                }
+                worker.onerror = function(error){
+                    document.getElementById("result").innerHTML = "메시지 : " + error.message + "<br>"; 
+                    document.getElementById("result").innerHTML += "파일 이름 : " + error.filename + "<br>"; 
+                    document.getElementById("result").innerHTML += "라인 번호 : " + error.lineno + "<br>"; 
+                }
+            }
+            else{
+                document.getElementById("result").innerHTML = "웹 워커 지원 안 합니다.";
+            }
+        }
+
+    </script>
+    
+    <button onclick="Available()">지원 여부</button>
+    <button onclick="stopOperation()">워커 미적용 수행</button>
+    <button onclick="applyWorker()">워커 적용 수행</button>
+    <button onclick="awake()">깨어날 시간</button>
+    <div id = "result"></div>
+
+    
+</body>
+</html>

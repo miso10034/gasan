@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테마저장 - 로컬스토리지 이용</title>
+    <style>
+        body.light{
+            background-color: aliceblue;
+            color: darkblue;
+        }
+        body.dark{
+            background-color: darkblue;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="light">
+    <h1>테마 변경</h1>
+    <label for="">
+        <input type="radio" name="theme" value="light" checked>
+        Light
+    </label>
+    <label for="">
+        <input type="radio" name="theme" value="dark">
+        Dark
+    </label>
+    <script>
+        // name이 theme인 input들을 가져온다
+        const themeRadios=document.querySelectorAll('input[name=theme]')
+        // localStorage에 selectedTheme라는 키 값을 가져와서 savedTheme에 넣는다
+        const savedTheme=localStorage.getItem('selectedTheme')
+
+        // 화면을 끄더라도 localStorage에 저장되어 있는 경우 해당 조건문을 실행함
+        if(savedTheme){
+            document.body.classList.add(savedTheme)
+            // value가 savedTheme인 input을 가져온다
+            const selectedRadio = document.querySelector(`input[value=${savedTheme}]`)
+            if(selectedRadio){
+                selectedRadio.checked = true;
+            }
+        }
+        // themeRadio => object 자료형
+        // 맨 처음엔 savedTheme의 값이 없기 때문에(savedTheme==null) forEach문을 돈다
+        // forEach는 배열 및 객체를 도는 반복문(이벤트라고 생각)
+        themeRadios.forEach(function(radio){
+            radio.addEventListener('change',function(){
+                const selectedTheme = radio.value;
+                // 기존 body에 있던 클래스를 지움(초기화)
+                document.body.classList.remove('light','dark');
+                document.body.classList.add(selectedTheme)
+                // localStorage에 키 값의 이름을 selectedTheme, 해당하는 값을 변수 selectedThem로 설정한다
+                localStorage.setItem('selectedTheme',selectedTheme)
+            })
+        })
+    </script>
+</body>
+</html>
