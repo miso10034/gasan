@@ -1,0 +1,31 @@
+.orderbtn_color{
+  background-color: indigo;
+  border-color: ivory;
+  color : ivory;
+}
+.main-bg{
+  height: 400px;
+  background-image: url('img/bg2.jpg') ;
+  background-size:500px;
+  background-position: center;
+}
+.App {
+  text-align: center;
+  font-family: "Noto Sans KR", "맑은 고딕", "Malgun Gothic", 돋움, Dotum, Tahoma, Verdana, sans-serif;
+}
+.col-md-4{
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
