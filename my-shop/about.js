@@ -1,12 +1,18 @@
-import React from "react";
-
-const About = ()=> {
+function About(){
     return(
         <div>
-            판매자 정보<hr></hr>
-            <h1>구해줘 레코드</h1><br></br>
-            <p>당신이 원하는 모든 레코드를 구해 드릴게요 :ㅇ</p>
-            <br></br>
+            <div className="container">
+                <div className="col-md-6 mt-4">
+                    <img src="./profile.png" width="350" height="300"></img><br></br>
+                </div>
+                <div>
+                <br></br>
+                    <h4>김미소</h4>
+                    <p>Born in Jeonju</p>
+                    <p>1998.07.29</p>  
+                    <button className="btn btn-danger">연락하기</button> 
+                </div>
+            </div>
         </div>
     )
 }
